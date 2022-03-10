@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://pleyer.gd" type="Script" id=1]
 [ext_resource path="res://uploads_files_3239652_nylan.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://death_floor.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 0.023379
+radius = 14.9563
 height = 0.002
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 1, 0, 0, 1 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -28,11 +32,13 @@ material/8 = null
 material/9 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105495, -0.0978598, -0.181564 )
+transform = Transform( 1, 0, 0, 0, 1.71819, 0, 0, 0, 1, -20.9662, 29.3887, -38.0455 )
 shape = SubResource( 1 )
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8449, 11.6, 0 )
+[node name="Camera" type="Camera" parent="KinematicBody"]
+transform = Transform( -1, 8.88178e-16, -8.74228e-08, -1.3914e-08, 0.987253, 0.159158, 8.63084e-08, 0.159158, -0.987253, -21.8449, 40.7079, -33.7557 )
+current = true
+far = 8192.0
 
 [node name="StaticBody" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2108, -2.43729, -1.3019 )
@@ -48,33 +54,39 @@ depth = 238.377
 
 [node name="CSGBox2" type="CSGBox" parent="StaticBody"]
 transform = Transform( -0.0327564, 0.999074, -0.0279027, -0.999403, -0.0324349, 0.011898, 0.010982, 0.0282758, 0.99954, 166.862, 61.6533, 210.593 )
+use_collision = true
 width = 109.081
 depth = 880.708
 
 [node name="CSGBox3" type="CSGBox" parent="StaticBody"]
 transform = Transform( 0.997835, 0.0657689, 0, -0.0657657, 0.997787, -0.00982605, -0.000646248, 0.00980477, 0.999952, -182.895, 58.7617, 277.958 )
+use_collision = true
 width = 7.09299
 height = 107.222
 depth = 836.09
 
 [node name="CSGBox4" type="CSGBox" parent="StaticBody"]
 transform = Transform( 0.0472808, 0, 0.998882, 0, 1, 0, -0.998882, 0, 0.0472808, 12.3095, 58.3071, -126.659 )
+use_collision = true
 height = 107.68
 depth = 442.306
 
 [node name="CSGBox5" type="CSGBox" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, -0.00663221, 0.999978, 0, -0.999978, -0.00663221, 1.11882, 13.5945, 179.198 )
+use_collision = true
 width = 41.334
 height = 33.9515
 depth = 5.33618
 
 [node name="CSGBox6" type="CSGBox" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.152754, 12.1698, 255.657 )
+use_collision = true
 width = 36.2227
 depth = 32.9275
 
 [node name="CSGBox7" type="CSGBox" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.33476, 436.284 )
+use_collision = true
 width = 203.937
 height = 3.70299
 depth = 162.286
@@ -86,11 +98,15 @@ height = 159.678
 
 [node name="CSGBox8" type="CSGBox" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.180222, 23.7028, 300.539 )
+use_collision = true
 width = 21.7032
 depth = 31.3679
 
-[node name="CSGBox9" type="CSGBox" parent="StaticBody"]
+[node name="death_floor" type="CSGBox" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, -0.0111175, 0.999938, 0, -0.999938, -0.0111175, -74.4285, -14.5446, 331.689 )
+use_collision = true
 width = 694.903
 height = 757.776
 depth = 1.75421
+material = SubResource( 2 )
+script = ExtResource( 3 )
