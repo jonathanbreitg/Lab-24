@@ -13,7 +13,7 @@ height = 0.002
 script = ExtResource( 1 )
 
 [node name="uploads_files_3239652_nylan" type="MeshInstance" parent="KinematicBody"]
-transform = Transform( 20.4042, 0, 0, 0, 20.4042, 0, 0, 0, 20.4042, -21.1554, -7.73585, -38.7247 )
+transform = Transform( 20.4042, 0, 0, 0, 20.4042, 0, 0, 0, 20.4042, -21.1554, 9.07386, -38.7247 )
 mesh = ExtResource( 2 )
 skeleton = NodePath("../..")
 material/0 = null
@@ -33,3 +33,64 @@ shape = SubResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8449, 11.6, 0 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2108, -2.43729, -1.3019 )
+
+[node name="Area" type="Area" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.9211, 0 )
+
+[node name="CSGBox" type="CSGBox" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0075, 2.95768, -29.947 )
+use_collision = true
+width = 390.339
+depth = 238.377
+
+[node name="CSGBox2" type="CSGBox" parent="StaticBody"]
+transform = Transform( -0.0327564, 0.999074, -0.0279027, -0.999403, -0.0324349, 0.011898, 0.010982, 0.0282758, 0.99954, 166.862, 61.6533, 210.593 )
+width = 109.081
+depth = 880.708
+
+[node name="CSGBox3" type="CSGBox" parent="StaticBody"]
+transform = Transform( 0.997835, 0.0657689, 0, -0.0657657, 0.997787, -0.00982605, -0.000646248, 0.00980477, 0.999952, -182.895, 58.7617, 277.958 )
+width = 7.09299
+height = 107.222
+depth = 836.09
+
+[node name="CSGBox4" type="CSGBox" parent="StaticBody"]
+transform = Transform( 0.0472808, 0, 0.998882, 0, 1, 0, -0.998882, 0, 0.0472808, 12.3095, 58.3071, -126.659 )
+height = 107.68
+depth = 442.306
+
+[node name="CSGBox5" type="CSGBox" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, -0.00663221, 0.999978, 0, -0.999978, -0.00663221, 1.11882, 13.5945, 179.198 )
+width = 41.334
+height = 33.9515
+depth = 5.33618
+
+[node name="CSGBox6" type="CSGBox" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.152754, 12.1698, 255.657 )
+width = 36.2227
+depth = 32.9275
+
+[node name="CSGBox7" type="CSGBox" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.33476, 436.284 )
+width = 203.937
+height = 3.70299
+depth = 162.286
+
+[node name="CSGBox" type="CSGBox" parent="StaticBody/CSGBox7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.1418, 207.402 )
+width = 375.172
+height = 159.678
+
+[node name="CSGBox8" type="CSGBox" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.180222, 23.7028, 300.539 )
+width = 21.7032
+depth = 31.3679
+
+[node name="CSGBox9" type="CSGBox" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, -0.0111175, 0.999938, 0, -0.999938, -0.0111175, -74.4285, -14.5446, 331.689 )
+width = 694.903
+height = 757.776
+depth = 1.75421
