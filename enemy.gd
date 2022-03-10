@@ -91,4 +91,4 @@ func _on_attacked():
 				is_hit = true
 			else:
 				print("too far away")
-
+				print("facting left")
