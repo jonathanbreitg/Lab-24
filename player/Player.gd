@@ -8,6 +8,8 @@ const PLAYER_MOVE_SPEED = 9
 var sprint_multiplier = 1
 var first_coords
 var first_rot
+var first_jump
+var double_jump_multiplier = 1.1
 onready var Camera = $Camera
 onready var GRAVITY = ProjectSettings.get("physics/3d/default_gravity") / 100
 func _ready():
@@ -70,10 +72,15 @@ func _physics_process(_delta: float):
 	
 	if Input.is_action_just_pressed("action_jump"):
 		if self.is_on_floor():
+			first_jump = true
+			self.velocity.y = 0
 			self.velocity.y += JUMP
-			# Disable snap to floor for the jumping frame
 			snap_vector = Vector3(0, 0, 0)
-	
+		elif first_jump == true:
+			self.velocity.y = 0
+			first_jump = false
+			self.velocity.y += JUMP * double_jump_multiplier
+			snap_vector = Vector3(0, 0, 0)
 	# Apply less gravity if we were on the floor last frame
 	# This helps our KinematicBody to avoid physics jitter
 	if self.is_on_floor():
