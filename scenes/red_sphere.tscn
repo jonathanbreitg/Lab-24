@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 0, 0, 1 )
+metallic_specular = 1.0
+
+[node name="Spatial" type="Spatial"]
+
+[node name="CSGSphere" type="CSGSphere" parent="."]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
+material = SubResource( 1 )
