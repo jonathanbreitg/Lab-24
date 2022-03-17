@@ -95,7 +95,6 @@ __meta__ = {
 environment = SubResource( 2 )
 
 [node name="Main_Menu_Camera" type="Camera" parent="Background_Animation"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Animation_Player" type="AnimationPlayer" parent="Background_Animation"]
 autoplay = "Background_Animation"

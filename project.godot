@@ -12,6 +12,7 @@ config_version=4
 
 config/name="Lab-24"
 run/main_scene="res://levels/Main_Menu.tscn"
+boot_splash/image="res://logo.png"
 config/icon="res://FPS_project_icon.png"
 
 [display]

@@ -30,4 +30,10 @@ transform = Transform( -1.15539e-06, 0.98248, -6.53906e-07, 0, -4.29455e-08, -14
 transform = Transform( 26.4323, 0, 0, 0, 0.98248, 0, 0, 0, 14.9596, -10.9171, -0.859158, -6.75023 )
 
 [node name="wall" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -99.9669, 14.0408, 0.334229 )
+transform = Transform( -12.7933, 0, 0, 0, 1, 0, 0, 0, 1, -50.1974, 14.0408, 0.334229 )
+
+[node name="wall2" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.51141, 0, 0, 0, 1, 0, 0, 0, 1, 41.7123, 14.0408, 29.0239 )
+
+[node name="wall3" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.51141, 0, 0, 0, 1, 0, 0, 0, 1, 86.0463, 14.0408, 29.0239 )
