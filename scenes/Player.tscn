@@ -4290,8 +4290,8 @@ valign = 1
 
 [node name="fps_label" type="Label" parent="."]
 modulate = Color( 0.184314, 0.764706, 0.027451, 1 )
-margin_right = 40.0
-margin_bottom = 14.0
+margin_right = 135.0
+margin_bottom = 41.0
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
