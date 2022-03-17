@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/FPS_project_icon.png-13dd23e634e4282c81947749e32f202b.stex"
+path="res://.import/Lab-24-icon.png-53cbce7086c382cc2190211bd25e503a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/FPS_project_icon.png"
-dest_files=[ "res://.import/FPS_project_icon.png-13dd23e634e4282c81947749e32f202b.stex" ]
+source_file="res://images/Lab-24-icon.png"
+dest_files=[ "res://.import/Lab-24-icon.png-53cbce7086c382cc2190211bd25e503a.stex" ]
 
 [params]
 

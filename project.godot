@@ -15,7 +15,7 @@ run/main_scene="res://scenes/SplashScreenScene.tscn"
 boot_splash/image="res://images/big_bg.png"
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0.278431, 0.247059, 0.658824, 1 )
-config/icon="res://images/FPS_project_icon.png"
+config/icon="res://images/Lab-24-icon.png"
 
 [display]
 
