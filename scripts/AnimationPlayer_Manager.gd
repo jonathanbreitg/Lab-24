@@ -42,7 +42,7 @@ func _ready():
 
 func set_animation(animation_name):
 	if animation_name == current_state:
-		print ("AnimationPlayer_Manager.gd -- WARNING: animation is already ", animation_name)
+		print("AnimationPlayer_Manager.gd -- WARNING: animation is already ", animation_name)
 		return true
 
 

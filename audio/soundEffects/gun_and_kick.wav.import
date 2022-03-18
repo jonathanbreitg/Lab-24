@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gun_and_kick.wav-0af8d89fe8c47cd9ebc374449aa0952d.sample"
+
+[deps]
+
+source_file="res://audio/soundEffects/gun_and_kick.wav"
+dest_files=[ "res://.import/gun_and_kick.wav-0af8d89fe8c47cd9ebc374449aa0952d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
