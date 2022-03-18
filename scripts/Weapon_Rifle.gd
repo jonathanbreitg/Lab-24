@@ -39,6 +39,7 @@ func fire_grappling_hook():
 			#ray.remove_child(wire)
 			#get_parent().get_parent().get_parent().get_parent().add_child(wire)
 			position_of_collision = ray.get_collision_point()
+			get_parent().get_parent().get_parent().position_of_collision = position_of_collision
 			print(position_of_collision,get_parent().get_parent().global_transform.origin)
 			get_parent().get_parent().get_parent().dir = (position_of_collision - get_parent().get_parent().global_transform.origin).normalized() * speed #a -> b = b-a
 			print(get_parent().get_parent().get_parent().dir)
@@ -48,6 +49,7 @@ func fire_grappling_hook():
 			else:
 				print("below")	
 			print(get_parent().get_parent().get_parent().dir)
+			
 func equip_weapon():
 	if player_node.animation_manager.current_state == IDLE_ANIM_NAME:
 		is_weapon_enabled = true

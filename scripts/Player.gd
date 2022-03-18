@@ -22,7 +22,8 @@ var first_coords
 var first_rot
 var MOUSE_SENSITIVITY
 
-
+var position_of_collision
+var speed_hook = 5
 var unlocked_double_jump = true
 var unlocked_gun = true
 var unlocked_dodge = true
@@ -186,15 +187,6 @@ func process_input(delta):
 		
 		# ----------------------------------
 		# Firing the weapons
-		if Input.is_action_pressed("fire"):
-			if changing_weapon == false:
-				var current_weapon = weapons[current_weapon_name]
-				if current_weapon != null:
-					if animation_manager.current_state == current_weapon.IDLE_ANIM_NAME:
-						animation_manager.set_animation(current_weapon.FIRE_ANIM_NAME)
-						if current_weapon_name == "RIFLE":
-							$player_soundEffects_player2.stream = fire_sound
-							$player_soundEffects_player2.play()
 		# ----------------------------------
 		if Input.is_action_just_pressed("grappling_hook"):
 			if grappled:
@@ -220,6 +212,15 @@ func process_input(delta):
 			print("got here")
 			dir = Vector3.ZERO
 			vel.y = JUMP_SPEED
+	if Input.is_action_pressed("fire"):
+		if changing_weapon == false:
+			var current_weapon = weapons[current_weapon_name]
+			if current_weapon != null:
+				if animation_manager.current_state == current_weapon.IDLE_ANIM_NAME:
+					animation_manager.set_animation(current_weapon.FIRE_ANIM_NAME)
+					if current_weapon_name == "RIFLE":
+						$player_soundEffects_player2.stream = fire_sound
+						$player_soundEffects_player2.play()
 func process_movement(delta):
 	
 	#procces HUD
@@ -241,6 +242,9 @@ func process_movement(delta):
 	if grappled:
 		wire.global_transform.origin = wire_first_pos
 		wire.global_transform.basis = wire_first_basis
+		dir = (position_of_collision - global_transform.origin).normalized() * speed_hook 
+		if dir.x < 0.01 && dir.x > -0.001 || dir.z < 0.01 && dir.z > -0.001|| dir.y< 0.01 && dir.y > -0.001:
+			grappled = false
 	var hvel = vel
 	if !grappled:	
 		hvel.y = 0
@@ -268,11 +272,13 @@ func process_movement(delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if collision.collider.name == "red_floor":
+			#DEATH LOGIG IS HERE
 			global_transform.origin = first_coords
 			global_transform.basis = first_rot
 			print("just died XD")
 			timer2.stop()
 			allowed_to_grapple = true
+			grappled = false
 		elif collision.collider.name != "" && !is_on_floor():
 			grappled = false
 			jump_bool = true

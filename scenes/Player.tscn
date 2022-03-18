@@ -15,12 +15,8 @@
 [ext_resource path="res://assets/Titillium-Regular.otf" type="DynamicFontData" id=13]
 [ext_resource path="res://audio/soundEffects/wooshing sound effect.wav" type="AudioStream" id=14]
 
-[sub_resource type="CapsuleShape" id=1]
-radius = 1.2
-height = 9.0
-
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 1.41837, 0.2, 1.50891 )
+[sub_resource type="BoxShape" id=33]
+extents = Vector3( 1.4237, 1, 5.30249 )
 
 [sub_resource type="SpatialMaterial" id=3]
 resource_name = "GunMaterial.001"
@@ -3937,6 +3933,15 @@ size = 42
 use_filter = true
 font_data = ExtResource( 13 )
 
+[sub_resource type="StyleBoxFlat" id=32]
+bg_color = Color( 0.396078, 0.752941, 0.0862745, 0.611765 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
 [sub_resource type="StyleBoxFlat" id=30]
 bg_color = Color( 0.396078, 0.752941, 0.0862745, 0.611765 )
 border_width_left = 2
@@ -3955,12 +3960,8 @@ font_data = ExtResource( 13 )
 script = ExtResource( 1 )
 
 [node name="Body_CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 5.81098, 0 )
-shape = SubResource( 1 )
-
-[node name="Feet_CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.493176, 0 )
-shape = SubResource( 2 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 5.41485, 0 )
+shape = SubResource( 33 )
 
 [node name="Rotation_Helper" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.239, 0 )
@@ -4339,7 +4340,7 @@ margin_left = 39.0
 margin_top = 28.0
 margin_right = 92.0
 margin_bottom = 42.0
-custom_styles/bg = SubResource( 30 )
+custom_styles/bg = SubResource( 32 )
 step = 0.001
 percent_visible = false
 
@@ -4348,7 +4349,6 @@ margin_left = 3.0
 margin_top = -16.0
 margin_right = 60.0
 margin_bottom = 2.0
-custom_fonts/font = SubResource( 31 )
 text = "dodge"
 
 [node name="ProgressBar2" type="ProgressBar" parent="ColorRect"]
