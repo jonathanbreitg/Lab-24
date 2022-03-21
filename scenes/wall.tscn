@@ -8,6 +8,6 @@ albedo_texture = ExtResource( 1 )
 [node name="wall" type="Spatial"]
 
 [node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 4.73473, 0, 0, 0, 0.211815, 0, 0, 0, 4.50079, 0, 0, 0 )
+transform = Transform( 5.12453, 0, 0, 0, 0.211815, 0, 0, 0, 5.66445, 0, 0, 0 )
 use_collision = true
 material = SubResource( 1 )

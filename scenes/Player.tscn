@@ -4189,6 +4189,7 @@ cast_to = Vector3( 0, 0, 800 )
 
 [node name="wire" type="CSGCylinder" parent="Rotation_Helper/Gun_Fire_Points/Rifle_Point/Ray_Cast"]
 transform = Transform( 0.177, 0, 0, 0, -4.37114e-08, -0.177, 0, 634.85, -4.91178e-06, 2.309, -1.597, 310.648 )
+visible = false
 height = 1.01153
 material = SubResource( 29 )
 
