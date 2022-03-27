@@ -196,7 +196,7 @@ func process_input(delta):
 				if is_slowing_down && allowed_to_grapple:
 					grappled = true
 					$Rotation_Helper/Gun_Fire_Points/Rifle_Point.fire_grappling_hook()
-					timer2.start(5.0)
+					timer2.start(2.3)
 					allowed_to_grapple = false
 					wire_first_pos= wire.global_transform.origin
 					wire_first_basis = wire.global_transform.basis
@@ -222,14 +222,14 @@ func process_input(delta):
 						$player_soundEffects_player2.stream = fire_sound
 						$player_soundEffects_player2.play()
 func process_movement(delta):
-	
+	print(jump_bool)
 	#procces HUD
 	if timer.time_left == 0:
 		$ColorRect/ProgressBar.value = 100
 	$ColorRect/ProgressBar.value = timer.time_left / 1.5 * 100
 	if timer2.time_left == 0:
 		$ColorRect/ProgressBar2.value = 100
-	$ColorRect/ProgressBar2.value = timer2.time_left / 5.0 * 100
+	$ColorRect/ProgressBar2.value = timer2.time_left / 2.3* 100
 	
 	if !grappled:
 		wire.visible = false
@@ -281,7 +281,8 @@ func process_movement(delta):
 			grappled = false
 		elif collision.collider.name != "" && !is_on_floor():
 			grappled = false
-			jump_bool = true
+			
+			#jump_bool = true
 			
 
 	

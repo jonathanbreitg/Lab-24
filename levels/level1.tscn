@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/derivitives/cubes.material" type="Material" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 0, 0, 1 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -31,8 +34,22 @@ material = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, 18.144, 0, 0, 0, 33.611, 123, -56, 0 )
 operation = 2
 
+[node name="CSGBox5" type="CSGBox" parent="map/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 147, -6, -5 )
+operation = 2
+width = 60.0
+height = 180.0
+depth = 270.0
+
 [node name="OmniLight" type="OmniLight" parent="map"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7111, -19.7855, -6.26303 )
-light_color = Color( 0.529412, 0.223529, 0.705882, 1 )
+visible = false
 shadow_enabled = true
 omni_range = 4096.0
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2.1, -60, -19, -70 )
+width = 8.0
+height = 8.0
+depth = 4.0
+material = SubResource( 1 )
