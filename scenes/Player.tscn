@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Colors.material" type="Material" id=2]
@@ -13,13 +13,10 @@
 [ext_resource path="res://levels/PauseMenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/32-32_white.png" type="Texture" id=12]
 [ext_resource path="res://assets/Titillium-Regular.otf" type="DynamicFontData" id=13]
+[ext_resource path="res://audio/soundEffects/wooshing sound effect.wav" type="AudioStream" id=14]
 
-[sub_resource type="CapsuleShape" id=1]
-radius = 1.2
-height = 9.0
-
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.8, 0.2, 0.8 )
+[sub_resource type="BoxShape" id=33]
+extents = Vector3( 1.4237, 1, 5.30249 )
 
 [sub_resource type="SpatialMaterial" id=3]
 resource_name = "GunMaterial.001"
@@ -3876,6 +3873,9 @@ tracks/34/imported = true
 tracks/34/enabled = true
 tracks/34/keys = PoolRealArray( 0, 1, 1.01328e-06, -7.3202e-07, -4.39584e-07, 0.279726, 0.0140126, -0.0783186, 0.956778, 1, 1, 1, 0.0666667, 1, 2.38419e-07, -7.00355e-07, -7.45058e-09, 0.268242, 0.00808504, -0.0800044, 0.95999, 1, 1, 1, 0.133333, 1, -2.38419e-07, -9.18284e-07, -8.9407e-08, 0.236928, -0.00795409, -0.0844881, 0.967814, 1, 1, 1, 0.266667, 1, -1.78814e-07, -6.78003e-07, -1.3411e-07, 0.125284, -0.0637347, -0.0991885, 0.985091, 1, 1, 1, 0.333333, 1, -1.01328e-06, -9.18284e-07, -1.11759e-07, 0.0657928, -0.0925845, -0.106222, 0.987834, 1, 1, 1, 0.4, 1, 6.85453e-07, -8.71718e-07, 2.30968e-07, 0.0223062, -0.113243, -0.110969, 0.987099, 1, 1, 1, 0.466667, 1, -1.78814e-07, -1.06357e-06, 3.35276e-07, -0.000939186, -0.124052, -0.113293, 0.985786, 1, 1, 1, 0.533333, 1, -2.08616e-07, -8.64267e-07, -8.9407e-08, -0.00302535, -0.125353, -0.112772, 0.985678, 1, 1, 1, 0.6, 1, -2.38419e-07, -8.28877e-07, -2.75671e-07, 0.00647114, -0.124201, -0.108103, 0.98633, 1, 1, 1, 0.666667, 1, -5.96046e-08, -8.23289e-07, -4.61936e-07, 0.0241089, -0.12224, -0.0995919, 0.987197, 1, 1, 1, 0.866667, 1, 1.78814e-07, -8.69855e-07, 5.96046e-08, 0.094239, -0.114407, -0.0657173, 0.986768, 1, 1, 1, 0.933333, 1, 2.08616e-07, -1.02073e-06, 1.56462e-07, 0.107596, -0.112858, -0.0592147, 0.985992, 1, 1, 1, 1, 1, 1.78814e-07, -8.34465e-07, -7.45058e-08, 0.112565, -0.112277, -0.0567911, 0.985646, 1, 1, 1 )
 
+[sub_resource type="SpatialMaterial" id=29]
+albedo_color = Color( 0.121569, 0.117647, 0.117647, 1 )
+
 [sub_resource type="GDScript" id=26]
 script/source = "extends Spatial
 
@@ -3933,16 +3933,35 @@ size = 42
 use_filter = true
 font_data = ExtResource( 13 )
 
+[sub_resource type="StyleBoxFlat" id=32]
+bg_color = Color( 0.396078, 0.752941, 0.0862745, 0.611765 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=30]
+bg_color = Color( 0.396078, 0.752941, 0.0862745, 0.611765 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
+[sub_resource type="DynamicFont" id=31]
+size = 14
+extra_spacing_char = 3
+font_data = ExtResource( 13 )
+
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
 
 [node name="Body_CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 5.81098, 0 )
-shape = SubResource( 1 )
-
-[node name="Feet_CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.493176, 0 )
-shape = SubResource( 2 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 5.41485, 0 )
+shape = SubResource( 33 )
 
 [node name="Rotation_Helper" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.239, 0 )
@@ -4155,7 +4174,7 @@ script = ExtResource( 8 )
 [node name="Camera" type="Camera" parent="Rotation_Helper"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, -0.307539, -0.0646362 )
 current = true
-fov = 90.0
+fov = 95.5
 far = 8192.0
 
 [node name="Gun_Fire_Points" type="Spatial" parent="Rotation_Helper"]
@@ -4167,6 +4186,12 @@ script = ExtResource( 9 )
 
 [node name="Ray_Cast" type="RayCast" parent="Rotation_Helper/Gun_Fire_Points/Rifle_Point"]
 cast_to = Vector3( 0, 0, 800 )
+
+[node name="wire" type="CSGCylinder" parent="Rotation_Helper/Gun_Fire_Points/Rifle_Point/Ray_Cast"]
+transform = Transform( 0.177, 0, 0, 0, -4.37114e-08, -0.177, 0, 634.85, -4.91178e-06, 2.309, -1.597, 310.648 )
+visible = false
+height = 1.01153
+material = SubResource( 29 )
 
 [node name="Knife_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163315, 10.4607, 2.54082 )
@@ -4205,9 +4230,6 @@ transform = Transform( 1, 0, 0, 0, 0.983001, 0.1836, 0, -0.1836, 0.983001, 0, -0
 [node name="HUD" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Crosshair" type="Control" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.705882 )
@@ -4299,3 +4321,60 @@ __meta__ = {
 
 [node name="Control" parent="." instance=ExtResource( 11 )]
 visible = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.3
+one_shot = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_top = 620.0
+margin_right = 148.331
+margin_bottom = 720.0
+color = Color( 0, 0, 0, 0.247059 )
+
+[node name="ProgressBar" type="ProgressBar" parent="ColorRect"]
+margin_left = 39.0
+margin_top = 28.0
+margin_right = 92.0
+margin_bottom = 42.0
+custom_styles/bg = SubResource( 32 )
+step = 0.001
+percent_visible = false
+
+[node name="Label" type="Label" parent="ColorRect/ProgressBar"]
+margin_left = 3.0
+margin_top = -16.0
+margin_right = 60.0
+margin_bottom = 2.0
+text = "dodge"
+
+[node name="ProgressBar2" type="ProgressBar" parent="ColorRect"]
+margin_left = 39.0
+margin_top = 75.0
+margin_right = 92.0
+margin_bottom = 89.0
+custom_styles/bg = SubResource( 30 )
+step = 0.001
+percent_visible = false
+
+[node name="Label2" type="Label" parent="ColorRect/ProgressBar2"]
+margin_left = -24.0
+margin_top = -18.0
+margin_right = 101.0
+custom_fonts/font = SubResource( 31 )
+text = "grappling hook"
+
+[node name="player_soundEffects_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = 6.118
+bus = "sound-effects"
+
+[node name="player_soundEffects_player2" type="AudioStreamPlayer" parent="."]
+bus = "sound-effects2"
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
