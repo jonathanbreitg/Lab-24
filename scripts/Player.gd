@@ -200,7 +200,7 @@ func process_movement(delta):
 			global_transform.origin = first_coords
 			global_transform.basis = first_rot
 		elif collision.collider.name == "nextlevelcube":
-			get_tree().change_scene("res://Levels//main_menu.tscn")
+			get_tree().change_scene("res://Levels//;level2.tscn")
 func process_changing_weapons(delta):
 	if changing_weapon == true:
 		var weapon_unequipped = false
@@ -247,6 +247,7 @@ func fire_bullet():
 		return
 
 	weapons[current_weapon_name].fire_weapon()
+	
 	
 
 
